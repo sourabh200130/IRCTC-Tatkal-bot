@@ -1,6 +1,6 @@
 from paddleocr import PaddleOCR
 
-
+# Capcha solving using paddleOCR
 def solve():
     finaltext = ''
     ocr = PaddleOCR(lang='en', use_angle_cls=True)
