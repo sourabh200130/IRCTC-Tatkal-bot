@@ -16,8 +16,13 @@ def selectTrain(driver):
     coach_option = panchaganga_express.find_element(By.XPATH, "following::*/text()[contains(., 'Sleeper')]/parent::*")
     coach_option.click()
 
-    time.sleep(2)
-    date = coach_option.find_element(By.XPATH, "following::*/text()[contains(., '30')]/parent::*")
+    time.sleep(1)
+    date = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "pre-avl"))
+    )
     date.click()
 
+    time.sleep(0.5)
+    book = panchaganga_express.find_element(By.XPATH, "following::*/text()[contains(., 'Book Now')]/parent::*")
+    book.click()
 
