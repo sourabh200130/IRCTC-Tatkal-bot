@@ -7,18 +7,19 @@
     </a>
 </p>
 
+## THIS PROJECT IS IN PROGRESS
+
 ## Introduction
 
 IRCTC Tatkal Ticket Automation Bot aims to help you book a Tatkal ticket without human intervention.
 
-## Progress
-- Login Automation
-- Searching train
+
 
 ## Pending
+- ~~Login Automation~~
 - ~~Searching train~~
-- Selecting the train
-- Selecting the type of seat
+- ~~Selecting the train~~
+- ~~Selecting the type of seat~~
 - Entering passenger information
 - Choosing a payment method
 - Finish payment
