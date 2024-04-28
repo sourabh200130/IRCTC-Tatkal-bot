@@ -1,8 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import paddleOCR
 from dotenv import load_dotenv
+import searchTrain
 import os
+
+import paddleOCR
 
 # Load my username and password securely. It will be removed when a gnu is created in future
 load_dotenv()
@@ -35,3 +37,4 @@ captcha_field = driver.find_element("id", "captcha")
 captcha_field.send_keys(result)
 submitBtn = driver.find_element(By.CSS_SELECTOR, "form[class='ng-valid ng-dirty ng-touched'] button[type='submit']")
 submitBtn.click()
+searchTrain.search(driver)
