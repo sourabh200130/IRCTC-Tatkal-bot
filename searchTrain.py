@@ -4,16 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-def search(driver):
+def search(driver, Train):
     actions = ActionChains(driver)
     actions.pause(1)
     # Enter Boarding information
     boarding = driver.find_element(By.CSS_SELECTOR, '.ng-tns-c57-8.ui-inputtext.ui-widget.ui-state-default.ui-corner'
                                                     '-all.ui-autocomplete-input.ng-star-inserted')
 
-
-
-    actions.send_keys_to_element(boarding, "YPR")
+    actions.send_keys_to_element(boarding, Train.boarding)
     actions.pause(0.5)
     actions.send_keys(Keys.RETURN)
     actions.perform()
@@ -22,19 +20,19 @@ def search(driver):
     destination = driver.find_element(By.CSS_SELECTOR, ".ng-tns-c57-9.ui-inputtext.ui-widget.ui-state-default.ui-corner"
                                                        "-all.ui-autocomplete-input.ng-star-inserted")
 
-    actions.send_keys_to_element(destination, "BKJ")
+    actions.send_keys_to_element(destination, Train.destination)
     actions.pause(0.5)
     actions.send_keys(Keys.RETURN)
     actions.perform()
 
     # Enter date of departure
-    date = driver.find_element(By.CSS_SELECTOR, ".ng-tns-c58-10.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ng"
-                                             "-star-inserted")
+    date = driver.find_element(By.CSS_SELECTOR,
+                               ".ng-tns-c58-10.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ng"
+                               "-star-inserted")
     date.click()
-    for i in range(0,10):
+    for i in range(0, 10):
         date.send_keys(Keys.BACKSPACE)
-    date.send_keys("30/05/2024")
+    date.send_keys(Train.date)
 
     # Submit
     date.send_keys(Keys.RETURN)
-

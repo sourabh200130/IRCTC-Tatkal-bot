@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from dotenv import load_dotenv
 import searchTrain
 import login
-import os
+import train
 
 import paddleOCR
 import selectTrain
@@ -23,8 +23,11 @@ driver.get("https://www.irctc.co.in/nget/train-search")
 # Logging in using my credentials
 login.login(driver)
 
+Train = train.train()
+
+
 # Search train
-searchTrain.search(driver)
+searchTrain.search(driver, Train)
 
 # Select train and coach
-selectTrain.selectTrain(driver)
+selectTrain.selectTrain(driver, Train)
