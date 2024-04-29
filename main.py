@@ -26,4 +26,5 @@ login.login(driver)
 # Search train
 searchTrain.search(driver)
 
+# Select train and coach
 selectTrain.selectTrain(driver)
