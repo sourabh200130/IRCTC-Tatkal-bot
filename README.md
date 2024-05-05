@@ -11,7 +11,7 @@
 
 ## Introduction
 
-IRCTC Tatkal Ticket Automation Bot aims to help you book a Tatkal ticket without human intervention.
+IRCTC Tatkal Ticket Automation Bot aims to help you book a Tatkal ticket without human intervention
 
 
 
